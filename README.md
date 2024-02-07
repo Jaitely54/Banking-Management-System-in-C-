@@ -42,7 +42,6 @@ The program is structured as follows:
 - **Data Persistence**: Currently, the program does not save user data persistently. Implementing file handling or database integration could be a future enhancement.
 - **Error Handling**: The program lacks robust error handling, especially for invalid inputs.
 - **User Interface**: The console interface is basic and could be improved for a better user experience.
-- **Security**: The application does not encrypt user data, which is crucial for real-world applications.
 
 ## Disclaimer
 
