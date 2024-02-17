@@ -81,7 +81,7 @@ int main()
                                     cout<<"Remaining balance: $"<< balance <<endl;
                                 }
                                 break;
-                            case 'I'
+                            case 'I'// Display balance
                                 cout<<"Your balance: $"<< balance <<endl;
                                 break;
                             case 'B':
