@@ -3,20 +3,12 @@ using namespace std;
 
 int main()
 {
-    // ........................ Declaration ........................//
-    string username;
-    string newUserhandle;
-    string password; 
-    string Newuser;
-    string Newpass;
-    double withdraw;
-    double deposits;
-    double balance = 0; // Initialize balance to 0 for new accounts
-    char option;
-    char opt;
+    // Variable declarations for account management
+    string username, newUserhandle, password, Newuser, Newpass;
+    double withdraw, deposits, balance = 0; // Account balance initialized to 0
+    char option, opt;
 
-    // .....................INTRO......................//
-
+    // Display ATM Welcome screen
     cout<<"\n\t\t    ========================================="<< endl;
     cout<<"\t\t    ========================================="<< endl;
     cout<<"\t\t          ||   WELCOME TO  ATM   ||"<< endl;
@@ -26,7 +18,7 @@ int main()
 
     do
     {
-        // ...........................MAIN MENU...........................
+        // Display main menu options
         cout<<"     MAIN SCREEN    \n"<<endl;
         cout<<"[L] Login \n";
         cout<<"[O] Open a new account \n";
@@ -38,7 +30,7 @@ int main()
 
         switch (option)
         {
-            case 'L': // FOR LOGIN
+            case 'L': // Login existing user
                 cout<<"Enter the Username: ";
                 cin>>username;
                 cout<<endl;
@@ -46,12 +38,13 @@ int main()
                 cin>>password;
                 cout<<endl;
 
+                // Validate login credentials
                 if (username == Newuser && password == Newpass)
                 {
                     cout<<"!!!! access Granted !!!!!"<<endl;
-                    do // LOOP 2
+                    do
                     {
-                        // ...................ANOTHER MENU..............................
+                        // Display account management options
                         cout<<endl;
                         cout<<"     WELCOME SIR !    \n"<<endl;
                         cout<<"[I] Inquire Balance \n";
@@ -64,17 +57,18 @@ int main()
 
                         switch (opt)
                         {
-                            case 'D': // Deposits
+                            case 'D': // Handle deposit
                                 cout<<"Enter the amount you want to deposit: $";
                                 cin>>deposits;
-                                balance += deposits; // Update balance after deposit
+                                balance += deposits; // Add to balance
                                 cout<<"Total balance: $"<< balance <<endl;
                                 break;
-                            case 'W': // Withdraw
+                            case 'W': // Handle withdrawal
                                 cout<<"Enter the amount you want to withdraw: $";
                                 cin>>withdraw;
                                 cout<<endl;
 
+                                // Check for sufficient balance
                                 if (balance < withdraw)
                                 {
                                     cout<<"Insufficient balance! Please try again"<<endl;
@@ -82,12 +76,12 @@ int main()
                                 }
                                 else
                                 {
-                                    balance -= withdraw; // Update balance after withdrawal
+                                    balance -= withdraw; // Subtract from balance
                                     cout<<"$"<<withdraw<<" has been debited from your account"<<endl;
                                     cout<<"Remaining balance: $"<< balance <<endl;
                                 }
                                 break;
-                            case 'I': // Check balance
+                            case 'I'
                                 cout<<"Your balance: $"<< balance <<endl;
                                 break;
                             case 'B':
